@@ -1,0 +1,45 @@
+<html>
+<body>
+
+<h3>.wav File Upload</h3>
+<form action="{% url 'index' %}" enctype="multipart/form-data" method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">Submit</button>
+</form>
+
+<!-- <script>
+
+    function verify(){
+        fetch('http://127.0.0.1:8000/speaker_verification/speaker-verify/', {
+        method: 'POST',
+        body: formData
+    })
+    }
+
+
+
+    const handleImageUpload = event => {
+    const files = event.target.files
+    const formData = new FormData()
+    formData.append('myFile', files[0])
+
+    fetch('http://127.0.0.1:8000/speaker_verification/speaker-verify/', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data)
+    })
+    .catch(error => {
+        console.log(error)
+    })
+    }
+
+    document.querySelector('#id_embedding').addEventListener('change', event => {
+  handleImageUpload(event)})
+</script> -->
+
+</body>
+</html>
